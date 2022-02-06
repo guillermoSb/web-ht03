@@ -30,16 +30,27 @@
 /* Estilos basicos para el bloque de lego */
 .lego_brick {
   position: absolute;
-  width: 200px;
-  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.5s all;
 }
 
-.lego_brick:hover {
-  transform: translateY(-10px);
+.lego_brick--8 {
+  width: 200px;
+  height: 80px;
+}
+
+.lego_brick--1 {
+  width: 50px;
+  height: 40px;
+}
+
+.lego_brick--8 .lego_brick_pins {
+  grid-template-columns: 30px 30px 30px 30px;
+}
+
+.lego_brick--1 .lego_brick_pins {
+  grid-template-columns: 30px;
 }
 
 .lego_brick--red {
@@ -63,7 +74,6 @@
   display: grid;
   column-gap: 20px;
   row-gap: 5px;
-  grid-template-columns: 30px 30px 30px 30px;
 }
 
 .lego_brick_pin {
@@ -106,7 +116,7 @@
   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5),
     -2px -2px 4px rgba(255, 255, 255, 0.5);
   z-index: 1;
-  transition: 1s all;
+  transition: 1s box-shadow, 0.8s transform;
 
   /* align-items: center; */
 }
@@ -188,6 +198,30 @@
 .fall-6 {
   left: 1200px;
   animation: brick-fall 3s infinite linear;
+}
+.fall-7 {
+  left: 300px;
+  animation: brick-fall 3s infinite linear;
+}
+.fall-8 {
+  left: 600px;
+  animation: brick-fall 1.5s infinite linear;
+}
+.fall-9 {
+  left: 500px;
+  animation: brick-fall 3s infinite linear;
+}
+.fall-10 {
+  left: 800px;
+  animation: brick-fall 2.6s infinite linear;
+}
+.fall-11 {
+  left: 1000px;
+  animation: brick-fall 1.3s infinite linear;
+}
+.fall-12 {
+  left: 1200px;
+  animation: brick-fall 2s infinite linear;
 }
 
 @keyframes brick-fall {
