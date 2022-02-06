@@ -27,29 +27,6 @@
   background-color: #ffba08;
 }
 
-.lego_figure {
-  height: 250px;
-  width: 300px;
-  border-radius: 50px;
-  border: 2px solid black;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  /* align-items: center; */
-}
-
-.lego_figure::after {
-  content: "";
-  display: block;
-  margin-top: -52px;
-  border-top: 2px solid black;
-  border-left: 2px solid black;
-  border-right: 2px solid black;
-  border-radius: 5px 5px 0 0;
-  width: 100px;
-  height: 50px;
-}
-
 /* Estilos basicos para el bloque de lego */
 .lego_brick {
   position: absolute;
@@ -116,6 +93,50 @@
   height: 100%;
 }
 
+/* Estilos para la cabeza */
+.lego_figure {
+  height: 250px;
+  width: 300px;
+  border-radius: 50px;
+  border: 2px solid black;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: #ffba08;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5),
+    -2px -2px 4px rgba(255, 255, 255, 0.5);
+  z-index: 1;
+  transition: 1s all;
+
+  /* align-items: center; */
+}
+.lego_figure:active {
+  transform: rotate(360deg);
+}
+.lego_figure:hover {
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.lego_figure:hover .eye_right::after {
+  transform: translateY(30px);
+}
+
+.lego_figure::after {
+  content: "";
+  display: block;
+  background-color: #ffba08;
+  z-index: inherit;
+  margin-top: -54px;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  border-radius: 5px 5px 0 0;
+  width: 100px;
+  height: 50px;
+}
+
 .eye {
   height: 40px;
   width: 40px;
@@ -142,6 +163,7 @@
   /* margin-right: 100px; */
   border-radius: 50px;
   background-color: #ffba08;
+  transition: 0.2s all;
 }
 
 .fall-1 {
@@ -166,11 +188,6 @@
 .fall-6 {
   left: 1200px;
   animation: brick-fall 3s infinite linear;
-}
-@keyframes blink {
-  100% {
-    /* transform: scaleY(0); */
-  }
 }
 
 @keyframes brick-fall {
