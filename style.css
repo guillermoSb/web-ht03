@@ -1,0 +1,183 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+@font-face {
+  font-family: "legothictype";
+  src: url("legothick-webfont.woff2") format("woff2"),
+    url("legothick-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Estilos basicos para un contenedor */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  font-family: "legothictype", sans-serif;
+  height: 100vh;
+}
+
+/* Estilos para el contenedor con el bloque de lego */
+.container--first {
+  background-color: #ffba08;
+}
+
+.lego_figure {
+  height: 250px;
+  width: 300px;
+  border-radius: 50px;
+  border: 2px solid black;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.lego_figure::after {
+  content: "";
+  display: block;
+  margin-top: -52px;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-radius: 5px 5px 0 0;
+  width: 100px;
+  height: 50px;
+}
+
+/* Estilos basicos para el bloque de lego */
+.lego_brick {
+  position: absolute;
+  width: 200px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s all;
+}
+
+.lego_brick:hover {
+  transform: translateY(-10px);
+}
+
+.lego_brick--red {
+  background: #dc2f02;
+}
+
+.lego_brick--blue {
+  background: #028cdc;
+}
+
+.lego_brick--green {
+  background: #70c80c;
+}
+
+.lego_brick--orange {
+  background: #e26613;
+}
+
+.lego_brick_pins {
+  /* height: 100%; */
+  display: grid;
+  column-gap: 20px;
+  row-gap: 5px;
+  grid-template-columns: 30px 30px 30px 30px;
+}
+
+.lego_brick_pin {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.5), -0.5px -0.5px rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lego_brick_pin::before {
+  height: 10px;
+  width: 10px;
+  display: block;
+  content: "LEGO";
+  transform: rotate(-45deg) translateX(-5.5px) translateY(2px);
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.3);
+}
+.bricks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.eye {
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  background-color: black;
+  position: absolute;
+  top: 70px;
+}
+
+.eye_left {
+  left: 80px;
+}
+
+.eye_right {
+  right: 80px;
+}
+
+.eye_right::after {
+  content: "";
+  display: block;
+  height: 50px;
+  width: 50px;
+  margin-top: 10px;
+  /* margin-right: 100px; */
+  border-radius: 50px;
+  background-color: #ffba08;
+}
+
+.fall-1 {
+  animation: brick-fall 2s infinite linear;
+}
+.fall-2 {
+  left: 200px;
+  animation: brick-fall 5s infinite linear;
+}
+.fall-3 {
+  left: 500px;
+  animation: brick-fall 3s infinite linear;
+}
+.fall-4 {
+  left: 700px;
+  animation: brick-fall 4s infinite linear;
+}
+.fall-5 {
+  left: 900px;
+  animation: brick-fall 2s infinite linear;
+}
+.fall-6 {
+  left: 1200px;
+  animation: brick-fall 3s infinite linear;
+}
+@keyframes blink {
+  100% {
+    /* transform: scaleY(0); */
+  }
+}
+
+@keyframes brick-fall {
+  0% {
+    transform: translateY(-20vh);
+  }
+  100% {
+    transform: translateY(120vh) rotate(250deg);
+  }
+}
