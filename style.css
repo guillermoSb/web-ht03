@@ -3,14 +3,6 @@
   padding: 0px;
 }
 
-@font-face {
-  font-family: "legothictype";
-  src: url("legothick-webfont.woff2") format("woff2"),
-    url("legothick-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
 /* Estilos basicos para un contenedor */
 .container {
   display: flex;
@@ -18,7 +10,7 @@
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
-  font-family: "legothictype", sans-serif;
+  font-family: sans-serif;
   height: 100vh;
 }
 
